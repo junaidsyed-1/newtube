@@ -1,11 +1,9 @@
-import Header from './Header';
-import Main from "./Main";
+import { Outlet } from 'react-router-dom';
 
 const Body = () => {
     return (
         <div>
-            <Header />
-            <Main />
+            <Outlet />
         </div>
     )
 }
