@@ -1,8 +1,9 @@
+import Body from "./components/Body";
 
 const App = () => {
     return (
         <div>
-            <h1>This is App</h1>
+            <Body />
         </div>
     )
 };
