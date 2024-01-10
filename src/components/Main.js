@@ -3,7 +3,7 @@ import SecondaryContainer from "./SecondaryContainer";
 
 const Main = () => {
     return (
-        <div>
+        <div className="py-4">
             <SidePanel />
             <SecondaryContainer />
         </div>

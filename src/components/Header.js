@@ -4,12 +4,17 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import PhotoCameraFrontIcon from '@mui/icons-material/PhotoCameraFront';
 import { YT_LOGO } from '../utils/constants';
+import { useContext } from 'react';
+import ToggleContext from "../utils/ToggleContext";
 
 const Header = () => {
+
+    const { handleToggleClick } = useContext(ToggleContext);
+
     return (
         <div className="px-4 py-2 flex justify-between items-center">
             <div className="flex items-center">
-                <span className="mx-2 hover:bg-gray-300 p-2 hover:bg-opacity-40 hover:rounded-full cursor-pointer"><MenuIcon /></span>
+                <span onClick={handleToggleClick} className="mx-2 hover:bg-gray-300 p-2 hover:bg-opacity-40 hover:rounded-full cursor-pointer"><MenuIcon /></span>
                 <img className="w-28 cursor-pointer" src={YT_LOGO} alt="YT-LOGO" />
             </div>
             <div className="w-1/3 flex">
