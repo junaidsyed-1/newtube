@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import ToggleContext from "../utils/ToggleContext";
+import { EXPLORE_SP } from "../utils/constants";
 
 const SidePanel = () => {
 
     const { toggle } = useContext(ToggleContext);
 
-    const explore = ["Trending", "Music", "Films", "Live", "Gaming", "News", "Podcast", "Sports", "Learning"]
 
     if (!toggle) return null;
 
@@ -17,7 +17,7 @@ const SidePanel = () => {
                 <li className="py-2 cursor-pointer hover:bg-[#272727] px-4 hover:text-white hover:rounded-md">Subscriptions</li>
                 <hr />
                 <h1 className="font-bold pt-2 px-4">Explore</h1>
-                {explore.map(cate => <li key={cate} className="py-2 cursor-pointer hover:bg-[#272727] px-4 hover:text-white hover:rounded-md">{cate}</li>)}
+                {EXPLORE_SP.map(cate => <li key={cate} className="py-2 cursor-pointer hover:bg-[#272727] px-4 hover:text-white hover:rounded-md">{cate}</li>)}
             </ul>
         </div>
     )
