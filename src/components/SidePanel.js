@@ -10,7 +10,7 @@ const SidePanel = () => {
     if (!toggle) return null;
 
     return (
-        <div className="font-semibold w-full md:w-[10%] shadow-lg px-4">
+        <div className="font-semibold w-full md:w-[10%] shadow-lg px-4 h-auto">
             <ul className="">
                 <li className="py-2 cursor-pointer hover:bg-[#272727] px-4 hover:text-white hover:rounded-md">Home</li>
                 <li className="py-2 cursor-pointer hover:bg-[#272727] px-4 hover:text-white hover:rounded-md">Shorts</li>

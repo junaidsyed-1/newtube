@@ -1,7 +1,10 @@
+import ButtonLists from "./ButtonLists";
 
 const ButtonsContainer = () => {
     return (
-        <div>ButtonsContainer</div>
+        <div>
+            <ButtonLists />
+        </div>
     )
 }
 
