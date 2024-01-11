@@ -1,9 +1,10 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Body from "./components/Body";
 import Header from "./components/Header";
-import Main from "./components/Main";
 import ToggleContext from "./utils/ToggleContext";
 import { useState } from "react";
+import WatchPage from "./components/WatchPage";
+import SecondaryContainer from "./components/SecondaryContainer";
 
 const App = () => {
     const [toggle, setToggle] = useState(true);
@@ -18,7 +19,11 @@ const App = () => {
             children: [
                 {
                     path: "/",
-                    element: <Main />
+                    element: <SecondaryContainer />
+                },
+                {
+                    path: "/watch",
+                    element: <WatchPage />
                 }
             ]
         }
