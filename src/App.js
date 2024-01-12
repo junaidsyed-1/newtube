@@ -10,7 +10,7 @@ const App = () => {
     const [toggle, setToggle] = useState(true);
     const handleToggleClick = () => {
         setToggle(!toggle);
-    }
+    };
 
     const router = createBrowserRouter([
         {
