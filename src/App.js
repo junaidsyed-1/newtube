@@ -36,7 +36,7 @@ const App = () => {
                 <RouterProvider router={router} />
             </div>
         </ToggleContext.Provider>
-    );
+    )
 };
 
 export default App;
