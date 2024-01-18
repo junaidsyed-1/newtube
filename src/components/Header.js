@@ -5,13 +5,13 @@ import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import PhotoCameraFrontIcon from '@mui/icons-material/PhotoCameraFront';
 import { YT_LOGO } from '../utils/constants';
 import { useDispatch } from 'react-redux';
-import { handleToggle } from '../utils/toggleSlice';
+import { handleMenuToggle } from '../utils/toggleSlice';
 
 const Header = () => {
     const dispatch = useDispatch();
 
     const handleToggleClick = () => {
-        dispatch(handleToggle())
+        dispatch(handleMenuToggle())
     }
 
     return (
