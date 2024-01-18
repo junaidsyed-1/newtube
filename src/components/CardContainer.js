@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
 import Card from "./Card";
-import { YT_POPULAR_VIDEO } from "../utils/constants";
 import usePopularVideos from "../hooks/usePopularVideos";
+import { Link } from "react-router-dom";
 
 const CardContainer = () => {
 
@@ -11,7 +10,7 @@ const CardContainer = () => {
 
     return (
         <div className="mt-4 flex flex-wrap gap-4">
-            {popularVideos.map((video) => <Card key={video.id} data={video} />)}
+            {popularVideos.map((video) => <Link to='watch' key={video.id}> <Card data={video} /> </Link>)}
         </div>
     )
 }

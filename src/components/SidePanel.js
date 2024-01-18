@@ -1,18 +1,16 @@
-import { useContext } from "react";
-import ToggleContext from "../utils/ToggleContext";
 import { EXPLORE_SP } from "../utils/constants";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const SidePanel = () => {
 
-    const { toggle } = useContext(ToggleContext);
-
-
-    if (!toggle) return null;
+    const handleToggle = useSelector(store => store.toggle.toggle);
+    if (!handleToggle) return;
 
     return (
         <div className="font-semibold w-full md:w-[10%] shadow-lg px-4 h-auto">
             <ul className="">
-                <li className="py-2 cursor-pointer hover:bg-[#272727] px-4 hover:text-white hover:rounded-md">Home</li>
+                <Link to='/'><li className="py-2 cursor-pointer hover:bg-[#272727] px-4 hover:text-white hover:rounded-md">Home</li></Link>
                 <li className="py-2 cursor-pointer hover:bg-[#272727] px-4 hover:text-white hover:rounded-md">Shorts</li>
                 <li className="py-2 cursor-pointer hover:bg-[#272727] px-4 hover:text-white hover:rounded-md">Subscriptions</li>
                 <hr />

@@ -1,7 +1,10 @@
+import WatchVideo from "./WatchVideo"
 
 const WatchPage = () => {
     return (
-        <div>WatchPage</div>
+        <div>
+            <WatchVideo />
+        </div>
     )
 }
 

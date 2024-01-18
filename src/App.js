@@ -1,16 +1,12 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Body from "./components/Body";
 import Header from "./components/Header";
-import ToggleContext from "./utils/ToggleContext";
-import { useState } from "react";
 import WatchPage from "./components/WatchPage";
 import SecondaryContainer from "./components/SecondaryContainer";
+import { Provider } from "react-redux";
+import appStore from "./utils/store";
 
 const App = () => {
-    const [toggle, setToggle] = useState(true);
-    const handleToggleClick = () => {
-        setToggle(!toggle);
-    };
 
     const router = createBrowserRouter([
         {
@@ -30,12 +26,12 @@ const App = () => {
     ]);
 
     return (
-        <ToggleContext.Provider value={{ toggle, handleToggleClick }}>
-            <div>
+        <div>
+            <Provider store={appStore}>
                 <Header />
                 <RouterProvider router={router} />
-            </div>
-        </ToggleContext.Provider>
+            </Provider>
+        </div>
     );
 };
 

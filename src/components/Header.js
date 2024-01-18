@@ -4,12 +4,15 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import PhotoCameraFrontIcon from '@mui/icons-material/PhotoCameraFront';
 import { YT_LOGO } from '../utils/constants';
-import { useContext } from 'react';
-import ToggleContext from "../utils/ToggleContext";
+import { useDispatch } from 'react-redux';
+import { handleToggle } from '../utils/toggleSlice';
 
 const Header = () => {
+    const dispatch = useDispatch();
 
-    const { handleToggleClick } = useContext(ToggleContext);
+    const handleToggleClick = () => {
+        dispatch(handleToggle())
+    }
 
     return (
         <div className="px-4 py-2 flex justify-between items-center">
