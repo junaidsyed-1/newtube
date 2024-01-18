@@ -1,8 +1,11 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, } from "react";
 import { YT_POPULAR_VIDEO } from "../utils/constants";
+import { useDispatch, useSelector } from "react-redux";
+import { getPopularVideos } from "../utils/videoSlice";
 
 const usePopularVideos = () => {
-    const [popularVideos, setPopularVideos] = useState(null);
+    const dispatch = useDispatch();
+    const popularVideos = useSelector(store => store.video.popularVideos);
 
     useEffect(() => {
         if (!popularVideos) {
@@ -14,7 +17,7 @@ const usePopularVideos = () => {
     const getVideos = async () => {
         const data = await fetch(YT_POPULAR_VIDEO);
         const json = await data.json();
-        setPopularVideos(json?.items)
+        dispatch(getPopularVideos(json?.items))
     };
     return popularVideos;
 
