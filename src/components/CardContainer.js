@@ -10,7 +10,7 @@ const CardContainer = () => {
 
     return (
         <div className="mt-4 flex flex-wrap gap-4">
-            {popularVideos.map((video) => <Link to='watch' key={video.id}> <Card data={video} /> </Link>)}
+            {popularVideos.map((video) => <Link to={'/watch?v=' + video.id} key={video.id}> <Card data={video} /> </Link>)}
         </div>
     )
 }
