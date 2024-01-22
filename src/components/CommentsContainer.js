@@ -1,4 +1,3 @@
-import Comment from "./Comment";
 import CommentsList from "./CommentsList";
 
 const commentsData = [
@@ -49,9 +48,11 @@ const commentsData = [
 const CommentsContainer = () => {
     return (
         <div className="py-2">
-            <h1 className="font-bold text-2xl">Comments</h1>
             <div>
-                <CommentsList comments={commentsData} />
+                <h1 className="font-bold text-2xl">Comments</h1>
+                <div>
+                    <CommentsList comments={commentsData} />
+                </div>
             </div>
         </div>
     )

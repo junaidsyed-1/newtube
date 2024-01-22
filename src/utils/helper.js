@@ -42,3 +42,17 @@ export function getRandomName() {
 export function getRandomComments() {
     return quotes[Math.floor(Math.random() * quotes.length)];
 }
+
+export const countViews = (views) => {
+    if (views > 1000000000) {
+        return Math.floor(views / 1000000000) + 'b';
+    }
+    if (views > 1000000) {
+        return Math.floor(views / 1000000) + 'm';
+    }
+    if (views >= 1000) {
+        return Math.floor(views / 1000) + 'k';
+    } else {
+        return views;
+    }
+};

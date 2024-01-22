@@ -1,22 +1,11 @@
+import { countViews } from "../utils/helper";
 
 const Card = ({ data }) => {
 
     const { snippet, statistics } = data;
     const { thumbnails, title, channelTitle } = snippet;
 
-    const countViews = (views) => {
-        if (views > 1000000000) {
-            return Math.floor(views / 1000000000) + 'b';
-        }
-        if (views > 1000000) {
-            return Math.floor(views / 1000000) + 'm';
-        }
-        if (views >= 1000) {
-            return Math.floor(views / 1000) + 'k';
-        } else {
-            return views;
-        }
-    }
+
 
     return (
         <div className="w-72">
