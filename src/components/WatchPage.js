@@ -7,6 +7,6 @@ const WatchPage = () => {
             <WatchVideo />
         </div>
     )
-}
+};
 
 export default WatchPage;
