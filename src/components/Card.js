@@ -1,14 +1,28 @@
 
 const Card = ({ data }) => {
 
-    const { snippet } = data;
+    const { snippet, statistics } = data;
     const { thumbnails, title, channelTitle } = snippet;
+
+    const countViews = (views) => {
+        if (views > 1000000000) {
+            return Math.floor(views / 1000000000) + 'b';
+        }
+        if (views > 1000000) {
+            return Math.floor(views / 1000000) + 'm';
+        }
+        if (views >= 1000) {
+            return Math.floor(views / 1000) + 'k';
+        } else {
+            return views;
+        }
+    }
 
     return (
         <div className="w-72">
             <img src={thumbnails.medium.url} alt="title" className="w-72 rounded-md object-cover" />
             <h1 className="font-bold">{title.length >= 51 ? title.slice(0, 51) + '...' : title}</h1>
-            <p className="text-sm">{channelTitle} <span className="text-sm ml-4">5.6m Views</span></p>
+            <p className="text-sm">{channelTitle.length >= 20 ? channelTitle.slice(0, 10) + '...' : channelTitle} <span className="text-sm ml-4"> {countViews(statistics.viewCount)} Views</span></p>
         </div >
     )
 };
