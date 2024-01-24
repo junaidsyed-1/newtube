@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import SuggestionCard from "./SuggestionCard";
 import usePopularVideos from "../hooks/usePopularVideos";
+import { Link } from "@mui/material";
 
 const VideoSuggestionContainer = () => {
     usePopularVideos();
@@ -9,8 +10,9 @@ const VideoSuggestionContainer = () => {
 
 
     return (
-        <div>
-            {popularVideos.map((video) => <SuggestionCard key={video.id} videos={video} />)}
+        <div className="cursor-pointer ">
+            {popularVideos.filter((video, index) => index < 10).map(v => <SuggestionCard key={v.id} videos={v} />)}
+            {/* {popularVideos.map((video) => <SuggestionCard key={video.id} videos={video} />)} */}
         </div>
     )
 }
