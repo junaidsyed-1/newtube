@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { countViews } from '../utils/helper';
 
 const SuggestionCard = ({ videos }) => {
