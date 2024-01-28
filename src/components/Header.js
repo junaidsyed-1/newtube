@@ -6,12 +6,19 @@ import PhotoCameraFrontIcon from '@mui/icons-material/PhotoCameraFront';
 import { YT_LOGO } from '../utils/constants';
 import { useDispatch } from 'react-redux';
 import { handleMenuToggle } from '../utils/toggleSlice';
+import ContrastIcon from '@mui/icons-material/Contrast';
 
-const Header = () => {
+const Header = (props) => {
+    const { theme } = props;
+    const { isDarkTheme, setIsDarkTheme } = theme;
+
     const dispatch = useDispatch();
 
     const handleToggleClick = () => {
         dispatch(handleMenuToggle())
+    };
+    function toggleTheme() {
+        setIsDarkTheme(!isDarkTheme)
     }
 
     return (
@@ -28,6 +35,7 @@ const Header = () => {
                 <span className="mx-2 hover:bg-gray-300 p-2 hover:bg-opacity-40 hover:rounded-full cursor-pointer"><PhotoCameraFrontIcon /></span>
                 <span className="mx-2 hover:bg-gray-300 p-2 hover:bg-opacity-40 hover:rounded-full cursor-pointer"><NotificationsNoneIcon /></span>
                 <span className="mx-2 hover:bg-gray-300 p-2 hover:bg-opacity-40 hover:rounded-full cursor-pointer"><PersonOutlineIcon /></span>
+                <span onClick={toggleTheme} className="mx-2 hover:bg-gray-300 p-2 hover:bg-opacity-40 hover:rounded-full cursor-pointer">< ContrastIcon /></span>
             </div>
         </div>
     )
