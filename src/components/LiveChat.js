@@ -21,7 +21,7 @@ const LiveChat = () => {
     }, [])
 
     return (
-        <div className="bg-slate-300 w-full p-3 mx-4 shadow-lg rounded-sm">
+        <div className="bg-slate-300 w-full p-3 mx-4 shadow-lg rounded-sm text-black">
             <div>
                 <h1 className="text-center text-xl font-bold">LiveChat</h1>
                 <hr />

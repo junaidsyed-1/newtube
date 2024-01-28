@@ -9,7 +9,7 @@ const SuggestionCard = ({ videos }) => {
 
 
     return (
-        <div className="flex flex-row mt-8 shadow-sm  text-black">
+        <div className="flex flex-row mt-8 shadow-sm">
             <img src={thumbnails.medium.url} alt="Image" className='w-52 h-28 object-cover rounded-md ' />
             <div className='px-2'>
                 <p className="font-bold">{title}</p>

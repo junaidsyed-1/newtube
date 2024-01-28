@@ -47,7 +47,7 @@ const commentsData = [
 
 const CommentsContainer = () => {
     return (
-        <div className="py-2">
+        <div className="py-2 text-black">
             <div>
                 <h1 className="font-bold text-2xl">Comments</h1>
                 <div>
