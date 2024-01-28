@@ -6,6 +6,6 @@ const Body = () => {
             <Main />
         </div>
     )
-}
+};
 
 export default Body;
