@@ -15,11 +15,13 @@ const Header = (props) => {
     const dispatch = useDispatch();
 
     const handleToggleClick = () => {
-        dispatch(handleMenuToggle())
+        dispatch(handleMenuToggle());
     };
+
     function toggleTheme() {
-        setIsDarkTheme(!isDarkTheme)
-    }
+        setIsDarkTheme(!isDarkTheme);
+    };
+
     const spanClass = ['mx-2 hover:bg-gray-300 p-2 hover:bg-opacity-40 hover:rounded-full cursor-pointer'];
 
     return (
