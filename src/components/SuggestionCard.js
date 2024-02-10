@@ -2,7 +2,6 @@ import React from 'react';
 import { countViews } from '../utils/helper';
 
 const SuggestionCard = ({ videos }) => {
-    console.log(videos);
 
     const { snippet, statistics } = videos;
     const { thumbnails, title, channelTitle } = snippet;

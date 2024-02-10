@@ -7,3 +7,5 @@ export const YT_POPULAR_VIDEO = "https://youtube.googleapis.com/youtube/v3/video
 export const EXPLORE_SP = ["Trending", "Music", "Films", "Live", "Gaming", "News", "Podcast", "Sports", "Learning"];
 
 export const BUTTON_CAT = ["All", "Sports", "Entertainment", "Live", "Music", "Movies", "Podcast", "News", "Lofi", "Volleyball", "Cricket", "Latest", "Featured", "Events", "Gadgets", "Media", "Top News", "Recently Uploaded"];
+
+export const YOUTUBE_SEARCH_API = "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
