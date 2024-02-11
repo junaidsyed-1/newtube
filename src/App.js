@@ -3,12 +3,13 @@ import Body from "./components/Body";
 import Header from "./components/Header";
 import WatchPage from "./components/WatchPage";
 import SecondaryContainer from "./components/SecondaryContainer";
-import { Provider } from "react-redux";
-import appStore from "./utils/store";
-import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const App = () => {
-    const [isDarkTheme, setIsDarkTheme] = useState(true);
+
+    const darkTheme = useSelector(store => store.theme.darkTheme);
+    const handleThemeClass = darkTheme ? "bg-[#0F0F0F] text-white" : "bg-white text-black";
+
 
     const router = createBrowserRouter([
         {
@@ -28,11 +29,9 @@ const App = () => {
     ]);
 
     return (
-        <div className={isDarkTheme ? "bg-[#0F0F0F] text-white" : "bg-white text-black"}>
-            <Provider store={appStore}>
-                <Header theme={{ isDarkTheme, setIsDarkTheme }} />
-                <RouterProvider router={router} />
-            </Provider>
+        <div className={handleThemeClass}>
+            <Header />
+            <RouterProvider router={router} />
         </div>
     );
 };

@@ -9,24 +9,28 @@ import { handleMenuToggle } from '../utils/toggleSlice';
 import ContrastIcon from '@mui/icons-material/Contrast';
 import { useEffect, useState } from 'react';
 import { addCachedResult, addSearchResult } from '../utils/searchSlice';
+import { addToggleTheme } from '../utils/themeSlice';
 
-const Header = (props) => {
-    const { theme } = props;
-    const { isDarkTheme, setIsDarkTheme } = theme;
+const Header = () => {
+    const dispatch = useDispatch();
     const [isSearchOn, setIsSearchOn] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
 
-    const dispatch = useDispatch();
     const searchResult = useSelector(store => store.search.searchResult);
     const cahcedRes = useSelector(store => store.search.cachedRes);
+
+    // Theme Slice
+    const isDarkTheme = useSelector(store => store.theme.darkTheme);
 
     const handleToggleClick = () => {
         dispatch(handleMenuToggle());
     };
 
     function toggleTheme() {
-        setIsDarkTheme(!isDarkTheme);
+        dispatch(addToggleTheme())
     };
+
+    const handleThemeClass = isDarkTheme ? "bg-[#0F0F0F] text-white" : "bg-white text-black";
 
     const getSearchRes = async () => {
         const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
@@ -52,19 +56,19 @@ const Header = (props) => {
     const spanClass = ['mx-2 hover:bg-gray-300 p-2 hover:bg-opacity-40 hover:rounded-full cursor-pointer'];
 
     return (
-        <header className={`sticky top-0 z-10 ${isDarkTheme ? "bg-[#0F0F0F] text-white" : "bg-white text-black"} px-4 py-2 flex justify-between items-center `}>
+        <header className={`sticky top-0 z-10 ${handleThemeClass} px-4 py-2 flex justify-between items-center `}>
             <div className="flex items-center">
                 <span onClick={handleToggleClick} className={spanClass}><MenuIcon /></span>
-                <img className="w-28 cursor-pointer" src={YT_LOGO} alt="YT-LOGO" />
+                <img className="w-28 cursor-pointer hidden md:flex" src={YT_LOGO} alt="YT-LOGO" />
             </div>
-            <div className="w-1/3 flex">
+            <div className="w-full sm:w-1/2 md:w-1/3 flex">
                 <input
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     onBlur={() => setIsSearchOn(false)}
                     onFocus={() => setIsSearchOn(!isSearchOn)}
                     type="text"
-                    className="w-full rounded-full px-4 py-1 border border-black rounded-tr-none rounded-br-none text-black" />
+                    className="w-full sm:w-full rounded-full px-4 py-1 border border-black rounded-tr-none rounded-br-none text-black" />
                 <span className="px-4 py-1 border border-black rounded-full rounded-tl-none rounded-bl-none border-l-0 bg-[#222222] cursor-pointer"><SearchIcon style={{ fill: '#ffffff' }} /></span>
                 {isSearchOn && <div className={`${isDarkTheme ? "bg-[#0F0F0F] text-white" : "bg-white text-black"} absolute sm:w-[30%] sm:mt-[2%] rounded-lg`}>
                     <ul className="my-4">
@@ -74,9 +78,9 @@ const Header = (props) => {
                 </div>}
             </div>
             <div className="flex">
-                <span className={spanClass}><PhotoCameraFrontIcon /></span>
-                <span className={spanClass}><NotificationsNoneIcon /></span>
-                <span className={spanClass}><PersonOutlineIcon /></span>
+                <span className={`${spanClass} hidden md:flex `}><PhotoCameraFrontIcon /></span>
+                <span className={`${spanClass} hidden md:flex `}><NotificationsNoneIcon /></span>
+                <span className={`${spanClass} hidden md:flex `}><PersonOutlineIcon /></span>
                 <span onClick={toggleTheme} className={spanClass}>< ContrastIcon /></span>
             </div>
         </header>

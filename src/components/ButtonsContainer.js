@@ -2,7 +2,7 @@ import ButtonLists from "./ButtonLists";
 
 const ButtonsContainer = () => {
     return (
-        <div>
+        <div className="hidden lg:flex">
             <ButtonLists />
         </div>
     )

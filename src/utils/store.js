@@ -3,6 +3,7 @@ import toggleReducer from './toggleSlice';
 import videoReducer from './videoSlice';
 import chatReducer from './chatSlice';
 import searchReducer from './searchSlice';
+import themeReducer from './themeSlice';
 
 const appStore = configureStore({
     reducer: {
@@ -10,6 +11,7 @@ const appStore = configureStore({
         video: videoReducer,
         chat: chatReducer,
         search: searchReducer,
+        theme: themeReducer,
     }
 });
 
