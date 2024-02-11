@@ -70,7 +70,8 @@ const Header = () => {
                     type="text"
                     className="w-full sm:w-full rounded-full px-4 py-1 border border-black rounded-tr-none rounded-br-none text-black" />
                 <span className="px-4 py-1 border border-black rounded-full rounded-tl-none rounded-bl-none border-l-0 bg-[#222222] cursor-pointer"><SearchIcon style={{ fill: '#ffffff' }} /></span>
-                {isSearchOn && <div className={`${isDarkTheme ? "bg-[#0F0F0F] text-white" : "bg-white text-black"} absolute sm:w-[30%] sm:mt-[2%] rounded-lg`}>
+
+                {isSearchOn && <div className={`${isDarkTheme ? "bg-[#0F0F0F] text-white" : "bg-white text-black"} absolute mt-[10%] w-[50%] md:mt-[9%] md:w-[30%] lg:w-[30%] lg:mt-[3%] rounded-lg`}>
                     <ul className="my-4">
                         {searchResult.map((search) => <li key={search} className='p-2 my-1 hover:bg-[#272727] hover:text-white cursor-pointer font-bold'>{search}</li>)}
 

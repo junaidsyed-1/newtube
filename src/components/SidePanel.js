@@ -11,7 +11,7 @@ const SidePanel = () => {
     if (!handleToggle) return;
 
     return (
-        <div className={`${handleThemeClass} absolute lg:relative font-semibold w-1/2 md:w-[30%] lg:w-[10%] shadow-lg px-4 h-screen lg:h-auto`}>
+        <div className={`${handleThemeClass} absolute lg:relative font-semibold w-1/2 md:w-[30%] lg:w-[25%] shadow-lg px-4 h-screen lg:h-auto`}>
             <ul className="">
                 <Link to='/'><li className="py-2 cursor-pointer hover:bg-[#272727] px-4 hover:text-white hover:rounded-md">Home</li></Link>
                 <li className="py-2 cursor-pointer hover:bg-[#272727] px-4 hover:text-white hover:rounded-md">Shorts</li>

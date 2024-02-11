@@ -4,7 +4,7 @@ import CardContainer from './CardContainer';
 
 const SecondaryContainer = () => {
     return (
-        <div className="pl-6">
+        <div className=" md:pl-6">
             <ButtonsContainer />
             <CardContainer />
         </div>
