@@ -6,6 +6,6 @@ const ButtonsContainer = () => {
             <ButtonLists />
         </div>
     )
-}
+};
 
 export default ButtonsContainer;
