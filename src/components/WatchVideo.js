@@ -2,13 +2,16 @@ import { useDispatch } from "react-redux";
 import { closeMenuToggle } from "../utils/toggleSlice";
 import { useSearchParams } from "react-router-dom";
 import LiveChat from "./LiveChat";
+import { useEffect } from "react";
 
 const WatchVideo = () => {
 
     const [params] = useSearchParams();
 
     const dispatch = useDispatch();
-    dispatch(closeMenuToggle());
+    useEffect(() => {
+        dispatch(closeMenuToggle());
+    }, [])
 
 
     return (
