@@ -51,8 +51,6 @@ const Header = () => {
         return () => clearTimeout(timer)
     }, [searchQuery, cahcedRes])
 
-
-
     const spanClass = ['mx-2 hover:bg-gray-300 p-2 hover:bg-opacity-40 hover:rounded-full cursor-pointer'];
 
     return (
