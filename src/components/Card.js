@@ -5,8 +5,6 @@ const Card = ({ data }) => {
     const { snippet, statistics } = data;
     const { thumbnails, title, channelTitle } = snippet;
 
-
-
     return (
         <div className="w-72">
             <img src={thumbnails.medium.url} alt="title" className="w-72 rounded-md object-cover" />
