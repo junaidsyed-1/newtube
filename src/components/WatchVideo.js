@@ -11,8 +11,7 @@ const WatchVideo = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(closeMenuToggle());
-    }, [])
-
+    }, []);
 
     return (
         <div className="flex">
